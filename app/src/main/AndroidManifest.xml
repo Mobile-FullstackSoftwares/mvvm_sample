@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.MainApplication"
         android:allowBackup="true"
@@ -15,6 +16,13 @@
         android:theme="@style/Theme.Mvvm_sample"
         tools:targetApi="33">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
             <intent-filter>
@@ -25,8 +33,7 @@
         </activity>
         <activity
             android:name=".ui.authentication.AuthenticationActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
