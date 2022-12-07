@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_weather"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginVertical="@dimen/vertical_margin"
+    android:elevation="@dimen/card_elevation_medium"
+    android:padding="@dimen/medium_padding"
+    app:cardCornerRadius="@dimen/card_radius_medium"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cardView_today_jobs">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_weather_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/imageView_weather"
+                android:layout_width="@dimen/image_size_extra_medium"
+                android:layout_height="@dimen/image_size_extra_medium"
+                android:layout_marginHorizontal="@dimen/horizontal_margin"
+                android:layout_marginVertical="@dimen/vertical_margin"
+                app:cardCornerRadius="@dimen/card_corner_radius_extra_large"
+                android:src="@drawable/sunny"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_weather_forecast"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_medium"
+                android:text="@string/sunny"
+                app:layout_constraintStart_toEndOf="@+id/imageView_weather"
+                app:layout_constraintTop_toTopOf="@+id/imageView_weather"
+                app:layout_constraintBottom_toTopOf="@+id/tv_weather_forecast_location"/>
+
+            <TextView
+                android:id="@+id/tv_weather_forecast_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_medium"
+                android:layout_marginVertical="@dimen/vertical_margin_tiny"
+                android:text="@string/home"
+                app:layout_constraintStart_toEndOf="@+id/imageView_weather"
+                app:layout_constraintTop_toBottomOf="@+id/tv_weather_forecast"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_weather"/>
+
+            <TextView
+                android:id="@+id/tv_weather_temperature"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin"
+                android:text="@string/temp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_weather_forecast"/>
+            <TextView
+                android:id="@+id/tv_weather_temperature_max_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin"
+                android:layout_marginVertical="@dimen/vertical_margin_tiny"
+                android:text="@string/temp_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_weather_temperature"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/vertical_margin_small"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_weather_card_layout">
+            <include
+                android:id="@+id/monday_weather_card"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                layout="@layout/item_weather"/>
+            <include
+                android:id="@+id/tuesday_weather_card"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                layout="@layout/item_weather"/>
+            <include
+                android:id="@+id/wednesday_weather_card"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                layout="@layout/item_weather"/>
+            <include
+                android:id="@+id/thursday_weather_card"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                layout="@layout/item_weather"/>
+            <include
+                android:id="@+id/friday_weather_card"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                layout="@layout/item_weather"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

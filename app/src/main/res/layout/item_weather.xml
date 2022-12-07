@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/small_padding"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/item_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_small"
+        android:text="@string/day"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/item_image_weather"
+        android:layout_width="@dimen/negligible"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_days"
+        android:tint="@color/icon_weather"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/sunny"
+        android:contentDescription="@string/app_name" />
+    <TextView
+        android:id="@+id/item_temperature_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/item_image_weather"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/item_temperature_min"
+        android:text="@string/app_name"/>
+    <TextView
+        android:id="@+id/item_temperature_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/item_temperature_max"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/app_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
