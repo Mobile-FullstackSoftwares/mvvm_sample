@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_nav_user_profile"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_user_profile" />
+        <item
+            android:id="@+id/drawer_nav_business_settings"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_business_settings" />
+        <item
+            android:id="@+id/drawer_nav_help_center"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_help_center" />
+        <item
+            android:id="@+id/drawer_nav_privacy_policy"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_privacy_policy" />
+        <item
+            android:id="@+id/drawer_nav_terms_of_service"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_terms_of_service" />
+        <item
+            android:id="@+id/drawer_nav_app_version"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_help_center" />
+        <item
+            android:id="@+id/drawer_nav_switch_account"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_switch_account" />
+        <item
+            android:id="@+id/drawer_nav_sign_out"
+            android:icon="@drawable/sunny"
+            android:title="@string/drawer_menu_sign_out" />
+    </group>
+</menu>

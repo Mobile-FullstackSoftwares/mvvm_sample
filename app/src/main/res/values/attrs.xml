@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularProgressView">
+        <attr name="stokeWidth" format="integer" />
+        <attr name="ovalSize" format="integer"/>
+        <attr name="parentColor" format="color" />
+        <attr name="fillColor" format="color"/>
+    </declare-styleable>
+</resources>

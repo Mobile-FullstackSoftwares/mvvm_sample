@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationBarView
 import java.lang.ref.WeakReference
 
@@ -120,4 +122,21 @@ fun NavigationUI.customSetupWithNavController(
                 }
             }
         })
+}
+
+/**
+ * @param noOfColumns are columns which we want ot show in grid layout of recycler-view
+ * Don't set the layoutManager explicitly when calling this function.
+ * //Making cardImage Square so width and height should be same
+ * it can be used as
+ * binding.recyclerView.apply {
+ *      val width = setColumns(CrossMintBuilder.numberOfColumns())
+ * }
+ * or val width = binding.recyclerView.setColumns(CrossMintBuilder.numberOfColumns())
+ * -> root.cardImage.layoutParams.width = cardWidth
+ * -> root.cardImage.layoutParams.height = cardWidth
+ */
+fun RecyclerView.setGridLayout(noOfColumns: Int) : Int {
+    this.layoutManager = GridLayoutManager(this.context, noOfColumns)
+    return this.context.resources.displayMetrics.widthPixels/noOfColumns
 }

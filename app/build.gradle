@@ -45,6 +45,11 @@ android {
 
 dependencies {
 
+    // When using a MDC theme
+    implementation "com.google.android.material:compose-theme-adapter:1.1.16"
+
+    // When using a AppCompat theme
+    implementation "com.google.accompanist:accompanist-appcompat-theme:0.25.1"
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
