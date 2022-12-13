@@ -1,28 +1,15 @@
 package com.fullstack.mvvm_sample.ui.home
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.RectF
-import android.net.Uri
-import android.provider.Settings
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.ItemTouchHelper.*
-import androidx.recyclerview.widget.ItemTouchHelper.Callback.makeMovementFlags
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.fullstack.mvvm_sample.R
 import com.fullstack.mvvm_sample.databinding.ActivityHomeBinding
 import com.fullstack.mvvm_sample.databinding.WeatherCardBinding
 import com.fullstack.mvvm_sample.ui.BaseActivity
 import com.fullstack.mvvm_sample.utils.customBottomSheetDialog
-import com.fullstack.mvvm_sample.utils.customDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
