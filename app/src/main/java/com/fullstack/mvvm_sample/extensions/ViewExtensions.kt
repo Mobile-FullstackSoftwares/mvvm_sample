@@ -140,3 +140,57 @@ fun RecyclerView.setGridLayout(noOfColumns: Int) : Int {
     this.layoutManager = GridLayoutManager(this.context, noOfColumns)
     return this.context.resources.displayMetrics.widthPixels/noOfColumns
 }
+
+/**
+ * This is extension for making pagination easier and don't have to worry about flow in Fragment or
+ * activity. @param hasNextData is callback which will tell the us if we have next data.
+ * Question can also be put why not check this value in callBack instead of sending here.
+ * isLastVisible() is also expensive operation as its called every-time if Recycler view is SCROLL_STATE_IDLE
+ * If we have nextItems then only this will be called and saves us the CPU cycles and memory.
+ */
+private fun RecyclerView.onLastItemVisible(
+    hasNextData: () -> Boolean, 
+    onLastItemCallBack: () -> Unit
+) = this.addOnScrollListener(
+    object : RecyclerView.OnScrollListener() {
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            super.onScrollStateChanged(recyclerView, newState)
+            if ((newState == RecyclerView.SCROLL_STATE_IDLE) && hasNextData() && isLastVisible
+                    (recyclerView)) {
+                onLastItemCallBack.invoke()
+            }
+        }
+
+        private fun isLastVisible(recyclerView: RecyclerView): Boolean {
+            val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+            val pos = layoutManager.findLastVisibleItemPosition()
+            val numItems: Int = recyclerView.adapter?.itemCount ?: 0
+            return pos + 1 >= numItems
+        }
+    })
+
+
+/**
+ * This is extension for making pagination easier and don't have to worry about flow in Fragment or
+ * activity. If checking that we have nextData is an expensive operation we can use this instead
+ * with @param hasNextData.
+ */
+private fun RecyclerView.onLastItemVisible(
+    onLastItemCallBack: () -> Unit
+) = this.addOnScrollListener(
+    object : RecyclerView.OnScrollListener() {
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            super.onScrollStateChanged(recyclerView, newState)
+            if ((newState == RecyclerView.SCROLL_STATE_IDLE) && isLastVisible
+                    (recyclerView)) {
+                onLastItemCallBack.invoke()
+            }
+        }
+
+        private fun isLastVisible(recyclerView: RecyclerView): Boolean {
+            val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+            val pos = layoutManager.findLastVisibleItemPosition()
+            val numItems: Int = recyclerView.adapter?.itemCount ?: 0
+            return pos + 1 >= numItems
+        }
+    })
